@@ -48,17 +48,15 @@ class Follower(Base):
     __tablename__ = 'Follower'
     id = Column(Integer, primary_key=True)
     follower_id = Column(Integer, ForeignKey('User.id'))
-    user = relationship(User)
-    following = Column(Integer, ForeignKey('User.id'))
-    user = relationship(User)
+    follower = relationship(User)
 
 class Comments(Base):
     __tablename__ = 'Comments'
     id = Column(Integer, primary_key=True)
     post_id = Column(Integer, ForeignKey('Post.id'))
-    user = relationship(Post)
+    post = relationship(Post)
     user_id = Column(Integer, ForeignKey('User.id'))
-    user = relationship(User)
+    user_id = relationship(User)
     comment = Column(String(250), nullable=False)
 
     

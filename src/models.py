@@ -49,6 +49,7 @@ class Follower(Base):
     id = Column(Integer, primary_key=True)
     follower_id = Column(Integer, ForeignKey('User.id'))
     follower = relationship(User)
+    following = Column(Integer, ForeignKey('User.id'))
 
 class Comments(Base):
     __tablename__ = 'Comments'
